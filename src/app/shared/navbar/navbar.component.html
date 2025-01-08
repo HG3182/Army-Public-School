@@ -1,0 +1,170 @@
+<!-- Navbar Container -->
+<nav class="flex items-center justify-between bg-gray-100 p-2 border-b border-gray-200 lg:px-52">
+    <!-- Left Logo -->
+    <a routerLink="/" class="flex-shrink-0">
+      <img src="../../../assets/img/mainlogo.png" class="w-40 h-auto object-contain" alt="Logo">
+
+
+    </a>
+  
+    <!-- Centered Links (Hidden on Small Screens) -->
+    <div class="hidden md:flex items-center space-x-10 mx-auto">
+      <!-- Dropdown Menus -->
+      <div class="relative group">
+        <a routerLink="/about" class="hover:text-[#8e0203]">About Us</a>
+        <ul class="dropdown-content hidden absolute bg-[#fbecd8ad] shadow-lg rounded p-2  group-hover:block">
+          <li><a routerLink="/aboutus/vision" class="block px-4 py-2 hover:bg-[#fbecd8ad]">Mission & Vision</a></li>
+          <li><a routerLink="/aboutus/principal" class="block px-4 py-2 hover:bg-[#fbecd8ad]">Principal’s Desk</a></li>
+          <li><a routerLink="/aboutus/news" class="block px-4 py-2 hover:bg-[#fbecd8ad]">Our News</a></li>
+          <li><a routerLink="/aboutus/career" class="block px-4 py-2 hover:bg-[#fbecd8ad]">CARRER</a></li>
+          <li><a routerLink="/aboutus/tendering" class="block px-4 py-2 hover:bg-[#fbecd8ad]">E TENDERING</a></li>
+        </ul>
+      </div>
+      <div class="relative group">
+        <a routerLink="" class="hover:text-[#8e0203]">Academics</a>
+        <ul class="dropdown-content hidden absolute bg-[#fbecd8ad] shadow-lg rounded p-2  group-hover:block">
+          <li><a routerLink="/academics/admissions" class="block px-4 py-2 hover:bg-[#fbecd8ad]">ADMISSIONS</a></li>
+          <li><a routerLink="/academics/holiday" class="block px-4 py-2 hover:bg-[#fbecd8ad]">HOLIDAY LIST</a></li>
+          <li><a routerLink="/academic/holidayhomework" class="block px-4 py-2 hover:bg-[#fbecd8ad]">HOLIDAY HOMEWORK 2023 – 2024</a></li>
+          <li><a routerLink="/academic/examination-schedule" class="block px-4 py-2 hover:bg-[#fbecd8ad]">EXAMINATION SCHEDULE</a></li>
+          <li><a routerLink="/academics/performance" class="block px-4 py-2 hover:bg-[#fbecd8ad]">ACADEMIC PERFORMANCE</a></li>
+          <li><a routerLink="/academics/fees" class="block px-4 py-2 hover:bg-[#fbecd8ad]">FEES STRUCTURE</a></li>
+          <li><a routerLink="/academics/programs" class="block px-4 py-2 hover:bg-[#fbecd8ad]">Enquiry</a></li>
+          <li><a routerLink="/academics/events" class="block px-4 py-2 hover:bg-[#fbecd8ad]">EVENTS</a></li>
+        </ul>
+        
+      </div>
+      <div class="relative group">
+        <a routerLink="" class="hover:text-[#8e0203]">Co-curricular</a>
+        <ul class="dropdown-content hidden absolute bg-[#fbecd8ad] shadow-lg rounded p-2  group-hover:block">
+          <li><a routerLink="/co-curricular/events" class="block px-4 py-2 hover:bg-[#fbecd8ad]">GALLERY</a></li>
+          <li><a routerLink="/co-curricular/clubs" class="block px-4 py-2 hover:bg-[#fbecd8ad]">SPORTS</a></li>
+          <li><a routerLink="/co-curricular/events" class="block px-4 py-2 hover:bg-[#fbecd8ad]">CLUBS</a></li>
+          <li><a routerLink="/co-curricular/clubs" class="block px-4 py-2 hover:bg-[#fbecd8ad]">MUSIC</a></li>
+          <li><a routerLink="/co-curricular/events" class="block px-4 py-2 hover:bg-[#fbecd8ad]">Art and Craft</a></li>
+          <li><a routerLink="/co-curricular/clubs" class="block px-4 py-2 hover:bg-[#fbecd8ad]">Student Council</a></li>
+        </ul>
+      </div>
+      <a routerLink="" class="hover:text-[#8e0203]">Admissions</a>
+      <a routerLink="/tc" class="hover:text-[#8e0203]">TC</a>
+      <a routerLink="" class="hover:text-[#8e0203]">ALT</a>
+      <a routerLink="/contact" class="hover:text-[#8e0203]">Contact</a>
+      <a routerLink="" class="hover:text-[#8e0203]">HDP</a>
+      <div class="relative group">
+        <a routerLink="" class="hover:text-[#8e0203]">MPD</a>
+      <ul class="dropdown-content hidden absolute bg-[#fbecd8ad] shadow-lg rounded p-2  group-hover:block">
+        <li><a routerLink="/certificates" class="block px-4 py-2 hover:bg-[#fbecd8ad]">CERTIFICATES</a></li>
+      </ul>
+      </div>
+    </div>
+  
+    <!-- Right Logo -->
+    <a routerLink="/home" class="flex-shrink-0 hidden md:block">
+      <img src="../assets/img/india flag.gif" class="w-100% h-auto" alt="Logo">
+    </a>
+  
+    <!-- Burger Icon (Small Screens) -->
+    <div class="md:hidden">
+      <button (click)="toggleMenu()" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu (Visible when toggled) -->
+  <div *ngIf="isOpen" class="md:hidden bg-gray-100 p-4 space-y-2">
+    <!-- About Us Dropdown -->
+    <div class="flex justify-between items-center cursor-pointer" (click)="toggleDropdown('about')">
+      <span class="hover:text-[#8e0203]">About Us</span>
+      <svg
+        *ngIf="!aboutDropdownOpen"
+        class="w-4 h-4 ml-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+      </svg>
+      <svg
+        *ngIf="aboutDropdownOpen"
+        class="w-4 h-4 ml-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+    <div *ngIf="aboutDropdownOpen" class="pl-4 space-y-2">
+      <a routerLink="/aboutus/vision" class="block hover:text-[#8e0203]">Mission & Vision</a>
+      <a routerLink="/aboutus/principal" class="block hover:text-[#8e0203]">Principal’s Desk</a>
+      <a routerLink="/aboutus/news" class="block hover:text-[#8e0203]">Our News</a>
+      <a routerLink="/aboutus/career" class="block hover:text-[#8e0203]">Career</a>
+      <a routerLink="/aboutus/tendering" class="block hover:text-[#8e0203]">E Tendering</a>
+    </div>
+  
+    <!-- Academics Dropdown -->
+    <div class="flex justify-between items-center cursor-pointer" (click)="toggleDropdown('academics')">
+      <span class="hover:text-[#8e0203]">Academics</span>
+      <svg *ngIf="!academicsDropdownOpen" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+      </svg>
+      <svg *ngIf="academicsDropdownOpen" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+    <div *ngIf="academicsDropdownOpen" class="pl-4 space-y-2">
+      <a routerLink="/academics/admissions" class="block hover:text-[#8e0203]">Admissions</a>
+      <a routerLink="/academics/holiday" class="block hover:text-[#8e0203]">Holiday List</a>
+      <a routerLink="/academic/holidayhomework" class="block hover:text-[#8e0203]">Holiday Homework 2023–2024</a>
+      <a routerLink="/academic/examination-schedule" class="block hover:text-[#8e0203]">Examination Schedule</a>
+      <a routerLink="/academics/performance" class="block hover:text-[#8e0203]">Academic Performance</a>
+      <a routerLink="/academics/fees" class="block hover:text-[#8e0203]">Fees Structure</a>
+      <a routerLink="/academics/enquiry" class="block hover:text-[#8e0203]">Enquiry</a>
+      <a routerLink="/academics/events" class="block hover:text-[#8e0203]">Events</a>
+    </div>
+  
+    <!-- Co-curricular Dropdown -->
+    <div class="flex justify-between items-center cursor-pointer" (click)="toggleDropdown('coCurricular')">
+      <span class="hover:text-[#8e0203]">Co-curricular</span>
+      <svg *ngIf="!coCurricularDropdownOpen" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+      </svg>
+      <svg *ngIf="coCurricularDropdownOpen" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+    <div *ngIf="coCurricularDropdownOpen" class="pl-4 space-y-2">
+      <a routerLink="/co-curricular/gallery" class="block hover:text-[#8e0203]">Gallery</a>
+      <a routerLink="/co-curricular/sports" class="block hover:text-[#8e0203]">Sports</a>
+      <a routerLink="/co-curricular/clubs" class="block hover:text-[#8e0203]">Clubs</a>
+      <a routerLink="/co-curricular/music" class="block hover:text-[#8e0203]">Music</a>
+      <a routerLink="/co-curricular/art" class="block hover:text-[#8e0203]">Art and Craft</a>
+      <a routerLink="/co-curricular/council" class="block hover:text-[#8e0203]">Student Council</a>
+    </div>
+  
+    <!-- Additional Links -->
+    <a routerLink="/admissions" class="block hover:text-[#8e0203]">Admissions</a>
+    <a routerLink="/tc" class="block hover:text-[#8e0203]">TC</a>
+    <a routerLink="" class="block hover:text-[#8e0203]">ALT</a>
+    <a routerLink="/contact" class="block hover:text-[#8e0203]">Contact</a>
+    <a routerLink="" class="block hover:text-[#8e0203]">HDP</a>
+    <div class="flex justify-between items-center cursor-pointer" (click)="toggleDropdown('HDP')">
+      <span class="hover:text-[#8e0203]">MPD</span>
+      <svg *ngIf="!HDPDropdownOpen" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+      </svg>
+      <svg *ngIf="HDPDropdownOpen" class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+    <div *ngIf="HDPDropdownOpen" class="pl-4 space-y-2">
+      <a routerLink="/certificates" class="block hover:text-[#8e0203]">CERTIFICATES</a>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>

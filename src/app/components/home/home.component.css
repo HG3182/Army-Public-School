@@ -1,0 +1,131 @@
+
+  
+
+  /* app.component.css */
+  .relative {
+    background-color: #f8fafc; /* Light gray */
+  }
+
+  
+  .custom-height {
+    height: 600px; /* Set your desired height here */
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 columns */
+  grid-template-rows: repeat(6, auto);  /* Adjusts height automatically based on content */
+  gap: 10px;  /* Adjusts spacing between images */
+  padding: 20px;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr); /* Switch to 2 columns on smaller screens */
+  }
+
+  .schoolWall{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .principal{
+    width: 100%;
+  }
+}
+
+.grid-container img {
+  width: 100px;  /* Ensures the images fit within each grid cell */
+  height: 100px;
+  object-fit: cover; /* Ensures images are cropped to fit without distortion */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+button {
+  display: inline-block;
+  margin-top: 10px; /* Optional: Adds space between text and button */
+}
+
+button a {
+  text-decoration: none; /* Removes underline on the link */
+  color: inherit; /* Ensures the link inherits the button text color */
+}
+
+.background-section {
+  background-image: url('/assets/img/bg.jpg'); /* Use the correct path for Angular assets */
+  background-size: cover;
+  background-position: center;
+  height: 600px; /* Adjust height as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.overlay-text {
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  padding: 20px;
+  /* border-radius: 8px; */
+  border-top: red solid 3px;
+  border-bottom: red solid 3px;
+}
+
+.overlay-text h1 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.overlay-text p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .background-section {
+    height: 550px;
+    margin-top: 10px;
+  }
+  
+  .overlay-text h1 {
+    font-size: 18px;
+  }
+
+  .overlay-text p {
+    font-size: 14px;
+  }
+}
+

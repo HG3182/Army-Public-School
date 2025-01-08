@@ -1,0 +1,63 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold">Dashboard</h1>
+    <button
+      (click)="logout()"
+      class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-300"
+    >
+      Logout
+    </button>
+  </div>
+
+  <div class="bg-white shadow-md rounded-lg p-6">
+    <h2 class="text-2xl font-semibold mb-6">Upload Document</h2>
+    
+    <form (ngSubmit)="onSubmit()" #documentForm="ngForm" class="space-y-4">
+      <div>
+        <label for="rollNo" class="block text-sm font-medium text-gray-700 mb-2">
+          Roll Number
+        </label>
+        <input 
+          type="text" 
+          id="rollNo" 
+          name="rollNo"
+          [(ngModel)]="rollNo"
+          required
+          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter Roll Number"
+        />
+      </div>
+
+      <div>
+        <label for="pdfFile" class="block text-sm font-medium text-gray-700 mb-2">
+          Upload PDF
+        </label>
+        <input 
+          type="file" 
+          id="pdfFile" 
+          name="pdfFile"
+          (change)="onFileSelected($event)"
+          accept=".pdf"
+          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <div *ngIf="selectedFileName" class="text-sm text-gray-600 mt-2">
+        Selected File: {{ selectedFileName }}
+      </div>
+
+      <div *ngIf="uploadError" class="text-red-500 text-sm mt-2">
+        {{ uploadError }}
+      </div>
+
+      <button 
+        type="submit" 
+        [disabled]="!documentForm.form.valid || !selectedFile"
+        class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 
+               disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        Upload Document
+      </button>
+    </form>
+  </div>
+</div>

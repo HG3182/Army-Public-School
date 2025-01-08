@@ -1,0 +1,46 @@
+<div class="container mx-auto p-6">
+  <h2 class="text-3xl font-semibold text-center mb-6">TC</h2>
+
+  <!-- Form Section -->
+  <form (ngSubmit)="onSubmit()" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+    <div class="mb-4">
+      <label for="rollNo" class="block text-lg font-medium text-gray-700">Roll No:</label>
+      <input
+        type="text"
+        [(ngModel)]="rollNo"
+        name="rollNo"
+        required
+        class="mt-2 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      />
+    </div>
+    <button
+      type="submit"
+      class="w-full py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+    >
+      Search Files
+    </button>
+  </form>
+
+  <!-- Error Message Section -->
+  <div *ngIf="error" class="error-message text-center text-red-600 mt-4">
+    <p class="text-lg font-medium">{{ error }}</p>
+  </div>
+
+  <!-- Uploaded Files Section -->
+  <div *ngIf="uploadedFiles.length > 0" class="mt-6">
+    <h3 class="text-xl font-semibold mb-4">Uploaded Files:</h3>
+    
+    <!-- Grid Container -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+      <div *ngFor="let file of uploadedFiles" class="bg-gray-50 p-4 rounded-md shadow-sm">
+        <a 
+          [href]="file.file_url" 
+          target="_blank" 
+          class="block text-indigo-600 hover:text-indigo-800 truncate max-w-full">
+          {{ file.file_name }}
+        </a>
+      </div>
+    </div>
+  </div>
+  
+</div>

@@ -1,0 +1,218 @@
+
+
+<!-- Hero Slider -->
+<div class="relative overflow-hidden">
+  <div class="flex transition-transform duration-500 ease-in-out" 
+       [style.transform]="'translateX(' + -currentIndex * 100 + '%)'">
+    <div *ngFor="let img of images; let i = index" 
+         class="w-full h-48 md:h-[500px] lg:h-[600px] flex-shrink-0"> <!-- Responsive heights -->
+      <img [src]="img" class="w-full h-full object-cover" alt="Hero Image {{ i + 1 }}">
+    </div>
+  </div>
+</div>
+
+
+  <div class="p-4 bg-[#8e0203] ">
+    <a href="" class="flex items-center space-x-2 font-bold text-lg text-white mt-5 ml-5">
+      <img src="../assets/img/new.gif" alt="New" >
+      <span>CLICK HERE FOR HOLIDAY HOMEWORK 2023-24</span>
+    </a>
+    
+    <div class="flex flex-col items-center justify-center">
+      <a href="your-link-here" class="mb-4">
+        <button class="bg-green-600 text-white font-bold py-2 px-4 rounded hover:bg-green-700 transition-colors">
+          Mandatory Public Disclosure
+        </button>
+      </a>
+      <img src="../assets/img/G2O-NEW.jpg" alt="Image" class="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-3xl h-auto rounded shadow-lg">
+    </div>
+  </div>
+
+
+  <div class="p-8  min-h-screen">
+    <div class="flex flex-col md:flex-row items-start md:items-stretch justify-center space-y-8 md:space-y-0 md:space-x-10 h-full">
+      
+      <!-- School Events Section -->
+      <div class="w-full md:w-1/3 bg-[#fbecd8ad] p-4 rounded-lg shadow-lg flex-grow flex flex-col justify-between">
+        <p class="text-white font-bold text-lg rounded-full bg-[#8e0203] px-6 py-3 text-center shadow-md">
+          School Events
+        </p>
+        <div class="p-4 space-y-4 flex-grow">
+          <p class="text-[#8e0203] text-sm font-medium px-4 py-2">
+            2nd OCT 2023 - FIT INDIA FREEDOM RUN with the motto “It can be run anywhere, anytime!”
+          </p>
+          <hr class="border-[#8e0203]">
+          <p class="text-[#8e0203] text-sm font-medium px-4 py-2">
+            14th SEP 2023 - ARMY PUBLIC SCHOOL, Khadki celebrated online Hindi Diwas to promote the official Hindi language.
+          </p>
+          <hr class="border-[#8e0203]">
+          <p class="text-[#8e0203] text-sm font-medium px-4 py-2">
+            5th SEPT 2023 - Online Teacher's Day celebrated.
+          </p>
+          <hr class="border-[#8e0203]">
+          <p class="text-[#8e0203] text-sm font-medium px-4 py-2">
+            21st JUNE 2023 - Online International Day of Yoga celebrated at APSK.
+          </p>
+          <hr class="border-[#8e0203]">
+          <p class="text-[#8e0203] text-sm font-medium px-4 py-2">
+            <a href="#" class="hover:underline">Read More</a>
+          </p>
+        </div>
+      </div>
+  
+      <!-- School Achievements Section -->
+      <div class="w-full md:w-1/3 bg-[#fbecd8ad] p-4 rounded-lg shadow-lg flex-grow flex flex-col justify-between">
+        <p class="text-white font-bold text-lg rounded-full bg-[#8e0203] px-6 py-3 text-center shadow-md">
+          School Achievements
+        </p>
+        <div class="flex-grow flex items-center justify-center p-4">
+          <img src="../assets/img/schoolAchievment1.jpeg" alt="School Achievement" class="rounded-lg shadow-md w-full h-full object-cover">
+        </div>
+      </div>
+  
+      <!-- School Activities Section -->
+      <div class="w-full md:w-1/3 bg-[#fbecd8ad] p-4 rounded-lg shadow-lg flex-grow flex flex-col justify-between">
+        <p class="text-white font-bold text-lg rounded-full bg-[#8e0203] px-6 py-3 text-center shadow-md">
+          School Activities
+        </p>
+        <div class="p-4 space-y-4 flex-grow">
+          <p class="text-[#8e0203] text-sm font-medium px-4 py-2">
+            28th AUG 2023 - INTER HOUSE ENGLISH RECITATION COMPETITION – PRIMARY WING
+          </p>
+          <hr class="border-[#8e0203]">
+          <p class="text-[#8e0203] text-sm font-medium px-4 py-2">
+            GLIMPSE OF ONLINE ASSEMBLY AT ARMY PUBLIC SCHOOL, KIRKEE
+          </p>
+          <hr class="border-[#8e0203]">
+          <p class="text-[#8e0203] text-sm font-medium px-4 py-2">
+            12th AUG 2023 - INTER HOUSE PATRIOTIC SONG COMPETITION
+          </p>
+          <hr class="border-[#8e0203]">
+          <p class="text-[#8e0203] text-sm font-medium px-4 py-2">
+            29th JULY 2023 - INTER HOUSE HINDI AND ENGLISH DEBATE COMPETITION
+          </p>
+          <hr class="border-[#8e0203]">
+          <p class="text-[#8e0203] text-sm font-medium px-4 py-2">
+            <a href="#" class="hover:underline">Read More</a>
+          </p>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+  
+
+  <div>
+    <br>
+
+    <div class="flex flex-row justify-around gap-5 schoolWall">
+      <div>
+        <p class="font-bold text-center text-[#8e0203]">ARMY PUBLIC SCHOOL, Khadki EXCELS OUTSIDE SCHOOL WALLS</p>
+        <div class="grid-container ">
+          <img *ngFor="let img of ['assets/img/schoolwall1.jpeg', 'assets/img/schoolwall2.jpeg', 'assets/img/schoolwall3.jpeg', 'assets/img/schoolwall4.jpeg', 'assets/img/schoolwall5.jpeg', 'assets/img/schoolwall6.jpeg', 'assets/img/schoolwall7.jpeg', 'assets/img/schoolwall8.jpeg', 'assets/img/schoolwall9.jpeg', 'assets/img/schoolwall10.jpeg', 'assets/img/schoolwall11.jpeg', 'assets/img/schoolwall12.jpeg', 'assets/img/schoolwall13.jpg', 'assets/img/schoolwall14.jpg', 'assets/img/schoolwall15.jpeg', 'assets/img/schoolwall16.jpeg', 'assets/img/schoolwall17.jpeg', 'assets/img/schoolwall18.jpeg', 'assets/img/schoolwall19.jpeg', 'assets/img/schoolwall20.jpeg', 'assets/img/schoolwall21.jpeg', 'assets/img/schoolwall22.jpeg', 'assets/img/schoolwall23.jpeg', 'assets/img/schoolwall24.jpeg', 'assets/img/schoolwall25.jpeg', 'assets/img/schoolwall26.jpeg', 'assets/img/schoolwall120.jpeg', 'assets/img/hero1.jpeg', 'assets/img/hero2.jpeg', 'assets/img/hero3.png', 'assets/img/hero4.png', 'assets/img/hero5.jpg', 'assets/img/hero6.jpeg', 'assets/img/principal.jpg', 'assets/img/schoolAchievment1.jpeg']" 
+               [src]="img" 
+               (click)="openImage(img)" 
+               alt="" 
+               style="cursor: pointer;">
+        </div>
+      </div>
+      
+      
+      <div class="w-1/3 principal">
+        <p class="font-bold text-center text-[#8e0203]">PRINCIPAL’S MESSAGE</p>
+        <br>
+        <div style="text-align: center;">
+          <img src="../assets/img/principal.jpg" alt="" style="width: 500px; height:auto;">
+          <p class="text-[#8e0203]">
+            Dear Parents/ Guardians. <br>
+            <b>A Happy Childhood Is Perhaps The Most Fortunate Gift In Life –</b>
+            and we at APS Khadki are definitely making memories for our children.
+          </p>
+          <button class="bg-[#8e0203] hover:bg-[#a32e2e] text-white font-bold py-2 px-4 rounded">
+            <a routerLink="/aboutus/principal" class="text-white">Read More</a>
+          </button>
+        </div>
+        
+      </div>
+    </div>
+  
+    <!-- Modal for displaying the selected image -->
+    <div *ngIf="selectedImage" class="modal-overlay" (click)="closeImage()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="close-button" (click)="closeImage()">&times;</span>
+        <img [src]="selectedImage" alt="Large view" style="max-width: 100%; max-height: 80vh;">
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="background-section">
+    <div class="overlay-text">
+      <h1>ARMY PUBLIC SCHOOL, Khadki JEE ACHIEVERS 2023 <br> CONGRATULATIONS</h1>
+    </div>
+    
+      <div>
+        <br>
+        <p>YASHRAJ – XII-A</p>
+        <p>YAJVIN R – XII-A</p>
+        <p>SAKSHAM M – XII-A</p>
+        <p>MAYANK  – XII-A</p>
+        <p>ABHIMANYU– XII-A</p>
+        <p>KSITIJ VISHT– XII-A</p>
+        <p>SHWET SINGH– XII-A</p>
+        <p>ADARSH SINGH– XII-A</p>
+        <p>PRATHMESH POL– XII-A</p>
+        <p>AMAN KUMAR– XII-A</p>
+        <p>ADITYA THAPLIYAL– XII-A</p>
+        <p>REBECCA JENA– XII-A</p>
+        <p>ARJUNADITYA DABBAS– XII-A</p>
+      </div>
+  </div>
+  
+  <div class="container mx-auto p-8">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <!-- Contact Info Section -->
+      <div class="w-full md:w-2/5 bg-gradient-to-r from-[#fbecd8ad] to-[#ffe5c4ad] text-white p-8 rounded-lg shadow-lg space-y-4">
+        
+        <h2 class="text-3xl font-bold mb-4 text-[#8e0203]">Contact Us</h2>
+        <hr class="border-[#8e0203]">
+        <p class="text-lg text-[#8e0203]">We’d love to hear from you! Feel free to reach out using the contact information below.</p>
+  
+        <div>
+          <p class="font-semibold text-lg text-[#8e0203]">Address:</p>
+          <p class="text-sm text-[#8e0203]">Army Public School Khadki C/O HQ BEG & Centre Khadki, Pune – 411003</p>
+        </div>
+  
+        <div>
+          <p class="font-semibold text-lg text-[#8e0203]">Phone:</p>
+          <p class="text-sm text-[#8e0203]">020-26683454</p>
+        </div>
+  
+        <div>
+          <p class="font-semibold text-lg text-[#8e0203]">Email:</p>
+          <p class="text-sm text-[#8e0203]"> apskirkee11&#64;gmail.com</p>
+        </div>
+  
+        <div>
+          <p class="font-semibold text-lg text-[#8e0203]">Working Hours:</p>
+          <p class="text-sm text-[#8e0203]">Mon - Fri, 9:00 AM - 5:00 PM</p>
+        </div>
+        <br>
+      </div>
+  
+      <!-- Map Section -->
+      <div class="w-full md:w-3/5 rounded-lg overflow-hidden shadow-lg">
+        <iframe
+          class="w-full h-80 md:h-[500px]"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30260.06711707447!2d73.870907!3d18.551105!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0ebcbf89c29%3A0xdeed2a1a1d6df8ee!2sArmy%20Public%20School%2C%20Khadki!5e0!3m2!1sen!2sus!4v1730606932411!5m2!1sen!2sus"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+
+  <router-outlet></router-outlet>

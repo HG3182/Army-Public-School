@@ -1,0 +1,30 @@
+<!-- Main Banner Section -->
+<div class="flex flex-col items-center justify-center min-h-[30vh] bg-cover bg-center bg-[#8e0203] text-white p-8 relative">
+    <div class="absolute inset-0 bg-black opacity-30"></div> <!-- Dark overlay for contrast -->
+    <div class="relative text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold mb-2">Certificates</h1>
+        <p class="text-gray-200 text-lg lg:text-xl max-w-3xl">Click on any certificate to view it in full.</p>
+    </div>
+</div>
+<br>
+<br>
+
+<!-- Certificates Grid -->
+<div class="certificates-container">
+    <div *ngFor="let certificate of certificates" (click)="openCertificate(certificate)" class="certificate-card">
+      <img [src]="certificate.image" alt="Certificate" class="certificate-thumbnail">
+      <div class="certificate-title">{{ certificate.title }}</div>
+    </div>
+</div>
+
+<br><br>
+
+<!-- Modal for displaying full certificate -->
+<div *ngIf="selectedCertificate" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" (click)="closeModal()">×</button>
+        <ng-container *ngFor="let page of selectedCertificate.pages">
+            <img [src]="page" alt="Certificate Page" class="certificate-full-page">
+        </ng-container>
+    </div>
+</div>
